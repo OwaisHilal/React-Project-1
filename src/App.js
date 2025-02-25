@@ -3,8 +3,8 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './components/About'; // Ensure About.js exists
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import About from './components/About'; // Ensure About.js exists
 // import Home from './components/Home'; // Ensure Home.js exists
 
 function App() {
@@ -34,19 +34,19 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar
-          title="Netflix"
-          aboutUs="About Us"
-          mode={mode}
-          toggleMode={toggleMode}
-        />
-        <Alert alert={alert} />
-        <Routes>
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/" element={<TextForm showAlert={showAlert} />} />
-        </Routes>
-      </Router>
+      {/* <Router> */}
+      <Navbar
+        title="Netflix"
+        aboutUs="About Us"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+      <Alert alert={alert} />
+
+      {/* Removed <Routes> and <Route> */}
+      <TextForm showAlert={showAlert} />
+
+      {/* </Router> */}
     </>
   );
 }
